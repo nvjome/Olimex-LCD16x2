@@ -70,6 +70,7 @@ void LCD16x2::lcdSetBacklight(uint8_t value) {
 	Wire.write(value);
 	Wire.endTransmission();
 }
+
 void LCD16x2::uartEnable(bool state) {
     uint8_t en;
     if (state == true) {
@@ -83,6 +84,7 @@ void LCD16x2::uartEnable(bool state) {
     Wire.write(en);
     Wire.endTransmission();
 }
+
 uint8_t LCD16x2::getFirmwareVersion() {
     uint8_t firm = 0;
     
@@ -95,6 +97,7 @@ uint8_t LCD16x2::getFirmwareVersion() {
     
     return firm;
 }
+
 /**
  * Set direction of GPIO.
  * @param pin   The pin number according to schematic: GPIO1, GPIO2, etc...

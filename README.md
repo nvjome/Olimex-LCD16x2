@@ -4,6 +4,12 @@ A library for the OLIMEX 16x2 LCD shield, for the Arduino Uno and compatible boa
 
 Modified from the original library developed by OLIMEX LTD, including additional functionality, fixed typos, and other fixes. There is no OLIMEX repo to fork from (that I could easily find), so it is here.
 
+## Issues
+
+- [ ] lcdWrite() generates this warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+	- Function would be rewritten to accept string parameter. Better yet, overhaul the library to allow the generic write function, similar to the [LiquidCrystal](https://github.com/arduino-libraries/LiquidCrystal) library.
+- [ ] Does not conform to the latest [Arduino library specification](https://arduino.github.io/arduino-cli/0.20/library-specification/), currently r2.
+
 Original README below:
 
 A SET OF EXAMPLES BETWEEN OLIMEXINO-328 AND SHIELD-LCD16X12.

@@ -68,6 +68,7 @@ class LCD16x2{
 		void lcdSetBacklight(uint8_t value);
         void lcdClear();
         void lcdGoToXY(uint8_t x, uint8_t y);
+        void lcdSetCursor(uint8_t x, uint8_t y) {lcdGoToXY(x, y);}
         void lcdWrite(char *string);
         void lcdWrite(int intVal);
 		void lcdWrite(float floatVal, uint8_t precision);
