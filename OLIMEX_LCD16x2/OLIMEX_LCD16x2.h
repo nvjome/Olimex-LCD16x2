@@ -1,5 +1,5 @@
-#ifndef LCD16x2_H
-#define LCD16x2_H
+#ifndef OLIMEX_LCD16x2_H
+#define OLIMEX_LCD16x2_H
 
 #include "Arduino.h"
 

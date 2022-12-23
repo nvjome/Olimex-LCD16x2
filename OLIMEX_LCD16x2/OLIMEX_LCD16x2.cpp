@@ -2,6 +2,7 @@
  * LCD16x2.cpp
  * 
  * Copyright 2013 OLIMEX LTD <support@olimex.com>
+ * Copyright 2022 Nolan Jome (github.com/nvjome)
  * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,8 +21,8 @@
  */
 
 
-#include "LCD16x2.h"
-#include "../Wire/Wire.h"
+#include "OLIMEX_LCD16x2.h"
+#include "Wire.h"
 
 
 /**

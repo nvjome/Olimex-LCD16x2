@@ -1,3 +1,11 @@
+# OLIMEX_LCD16x2
+
+A library for the OLIMEX 16x2 LCD shield, for the Arduino Uno and compatible boards.
+
+Modified from the original library developed by OLIMEX LTD, including additional functionality, fixed typos, and other fixes. There is no OLIMEX repo to fork from (that I could easily find), so it is here.
+
+Original README below:
+
 A SET OF EXAMPLES BETWEEN OLIMEXINO-328 AND SHIELD-LCD16X12.
 
 In order to get the examples working you have to :
