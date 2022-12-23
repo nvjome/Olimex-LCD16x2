@@ -39,6 +39,13 @@ LCD16x2::~LCD16x2() {
 }
 
 /**
+ * Initialise I2C bus.
+ */
+void LCD16x2::begin() {
+    Wire.begin();
+}
+
+/**
  * Read the id of the shield.
  * @return      If read value match BOARD_ID(0x65) the method return 1,
  * otherwise - 0.

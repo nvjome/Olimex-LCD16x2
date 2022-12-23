@@ -25,6 +25,7 @@
 #define OLIMEX_LCD16x2_H
 
 #include "Arduino.h"
+#include "Wire.h"
 
 #define SET_TRIS    0x01
 #define SET_LAT     0x02
@@ -51,6 +52,8 @@ class LCD16x2{
         
         LCD16x2();
         ~LCD16x2();
+
+        void begin();
         
         uint8_t getID();
         uint8_t getFirmwareVersion();
