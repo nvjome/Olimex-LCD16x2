@@ -1,8 +1,30 @@
+/*
+ * LCD16x2.cpp
+ * 
+ * Copyright 2013 OLIMEX LTD <support@olimex.com>
+ * Copyright 2022 Nolan Jome (github.com/nvjome)
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.
+ */
+
+
 #ifndef OLIMEX_LCD16x2_H
 #define OLIMEX_LCD16x2_H
 
 #include "Arduino.h"
-
 
 #define SET_TRIS    0x01
 #define SET_LAT     0x02
@@ -40,7 +62,7 @@ class LCD16x2{
         uint8_t digitalRead(uint8_t pin);
         uint8_t readButtons();    
         
-		void lcdSetBlacklight(uint8_t value);
+		void lcdSetBacklight(uint8_t value);
         void lcdClear();
         void lcdGoToXY(uint8_t x, uint8_t y);
         void lcdWrite(char *string);
