@@ -7,7 +7,7 @@ Modified from the original library developed by OLIMEX LTD, including additional
 ## Issues
 
 - [ ] lcdWrite() generates this warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
-	- Function would be rewritten to accept string parameter. Better yet, overhaul the library to allow the generic write function, similar to the [LiquidCrystal](https://github.com/arduino-libraries/LiquidCrystal) library.
+	- Function could be rewritten to accept string parameter. Better yet, overhaul the library to allow the generic write function, similar to the [LiquidCrystal](https://github.com/arduino-libraries/LiquidCrystal) library.
 - [ ] Does not conform to the latest [Arduino library specification](https://arduino.github.io/arduino-cli/0.20/library-specification/), currently r2.
 
 Original README below:
