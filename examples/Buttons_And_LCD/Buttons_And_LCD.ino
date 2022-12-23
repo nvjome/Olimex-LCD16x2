@@ -1,12 +1,11 @@
-#include <LCD16x2.h>
-#include <Wire.h>
+#include <OLIMEX_LCD16x2.h>
 
 LCD16x2 lcd;
 
 int buttons;
 
 void setup(){
-  Wire.begin();
+  lcd.begin();
 
   lcd.lcdClear();
   

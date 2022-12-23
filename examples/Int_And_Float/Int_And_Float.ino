@@ -1,5 +1,4 @@
-#include <LCD16x2.h>
-#include <Wire.h>
+#include <OLIMEX_LCD16x2.h>
 
 LCD16x2 lcd;
 
@@ -8,7 +7,7 @@ float floatVal1 = 0.0, floatVal2 = 0.0;
 
 
 void setup(){
-  Wire.begin();
+  lcd.begin();
 
   lcd.lcdClear();
   

@@ -1,5 +1,4 @@
-#include <LCD16x2.h>
-#include <Wire.h>
+#include <OLIMEX_LCD16x2.h>
 
 #define del  50
 
@@ -10,7 +9,7 @@ unsigned char blk  = 0;
 void setup(){
   
   delay(1000);
-  Wire.begin();
+  lcd.begin();
   Serial.begin(9600);
   
   lcd.uartEnable(true);

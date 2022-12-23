@@ -72,7 +72,7 @@ void LCD16x2::lcdSetBacklight(uint8_t value) {
 }
 void LCD16x2::uartEnable(bool state) {
     uint8_t en;
-    if(state == true) {
+    if (state == true) {
         en = 0x01;
     } else {
         en = 0x00;

@@ -1,11 +1,10 @@
-#include <LCD16x2.h>
-#include <Wire.h>
+#include <OLIMEX_LCD16x2.h>
 
 LCD16x2 lcd;
 
 void setup(){
 
-  Wire.begin();
+  lcd.begin();
   
   // Set GPIO1 as OUTPUT
   lcd.pinMode(lcd.GPIO1, OUTPUT);
