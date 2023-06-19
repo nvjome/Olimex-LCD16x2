@@ -238,3 +238,14 @@ void LCD16x2::lcdWrite(float floatVal, uint8_t precision) {
 	dtostrf(floatVal, 3, precision, charBuf);
     lcdWrite(charBuf);
 }
+
+size_t LCD16x2::write(uint8_t character) {
+    Wire.beginTransmission(ADDRESS);
+    Wire.write(LCD_WR);
+    Wire.write(y);
+    Wire.write(x);
+    Wire.write(character);
+    Wire.endTransmission();
+    
+    delay(20);
+}
