@@ -69,6 +69,7 @@ class LCD16x2: publis Print{
     void lcdWrite(char *string);
     void lcdWrite(int intVal);
     void lcdWrite(float floatVal, uint8_t precision);
+    virtual size_t write(uint8_t);
 
     const static uint8_t GPIO1 = 1;
     const static uint8_t GPIO2 = 2;
@@ -78,7 +79,7 @@ class LCD16x2: publis Print{
     const static uint8_t GPIO6 = 6;
     const static uint8_t GPIO7 = 7;
     const static uint8_t GPIO8 = 8;
-    const static uint8_t GPIO9 = 9;        
+    const static uint8_t GPIO9 = 9;
 
   private:
     uint8_t X;
