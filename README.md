@@ -1,6 +1,6 @@
-# OLIMEX_LCD16x2
+# Olimex-LCD16x2
 
-Arduino library for the [OLIMEX 16x2 LCD shield](https://www.olimex.com/Products/Duino/Shields/SHIELD-LCD16x2/), which includes an LCD, buttons, and additional GPIO pins.
+Arduino library for the [Olimex 16x2 LCD shield](https://www.olimex.com/Products/Duino/Shields/SHIELD-LCD16x2/), which includes an LCD, buttons, and additional GPIO pins.
 
 Bassed off of the original library developed by OLIMEX LTD with the following improvements:
 
@@ -17,7 +17,7 @@ Bassed off of the original library developed by OLIMEX LTD with the following im
 Writing to the display is similar to the LiquidCrystal display.
 
 ```c++
-#include "OLIMEX_LCD16x2.h"
+#include "Olimex-LCD16x2.h"
 
 LCD16x2 lcd;
 
@@ -38,7 +38,7 @@ void loop() {
 Use the `GPIO1` to `GPIO9` constants to access the shield's GPIO.
 
 ```c++
-#include "OLIMEX_LCD16x2.h"
+#include "Olimex-LCD16x2.h"
 
 LCD16x2 lcd;
 
