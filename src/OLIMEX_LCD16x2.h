@@ -47,7 +47,7 @@
  * @version     1.0
  * @since       2013-11-03
  */
-class LCD16x2: publis Print{
+class LCD16x2: public Print{
   public:
     LCD16x2();
     ~LCD16x2();
