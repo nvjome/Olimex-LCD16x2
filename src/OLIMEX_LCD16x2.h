@@ -46,42 +46,42 @@
  * @since       2013-11-03
  */
 class LCD16x2: public Print{
-  public:
-    LCD16x2();
-    ~LCD16x2();
+    public:
+        LCD16x2();
+        ~LCD16x2();
 
-    // High level user functions
-    void begin();
-    void pinMode(uint8_t pin, uint8_t direction);
-    void digitalWrite(uint8_t pin, uint8_t level);
-    uint8_t digitalRead(uint8_t pin);
-    void backlight(uint8_t value);
-    void clear();
-    void home() {setCursor(0,0);};
-    void setCursor(uint8_t x, uint8_t y);
+        // High level user functions
+        void begin();
+        void pinMode(uint8_t pin, uint8_t direction);
+        void digitalWrite(uint8_t pin, uint8_t level);
+        uint8_t digitalRead(uint8_t pin);
+        void backlight(uint8_t value);
+        void clear();
+        void home() {setCursor(0,0);};
+        void setCursor(uint8_t x, uint8_t y);
 
-    // Mid level user functions
-    uint8_t getID();
-    uint8_t getFirmwareVersion();
-    void uartEnable(bool state);
-    uint8_t readButtons();
+        // Mid level user functions
+        uint8_t getID();
+        uint8_t getFirmwareVersion();
+        void uartEnable(bool state);
+        uint8_t readButtons();
 
-    // Print class write function
-    virtual size_t write(uint8_t);
+        // Print class write function
+        virtual size_t write(uint8_t);
 
-    const static uint8_t GPIO1 = 1;
-    const static uint8_t GPIO2 = 2;
-    const static uint8_t GPIO3 = 3;
-    const static uint8_t GPIO4 = 4;
-    const static uint8_t GPIO5 = 5;
-    const static uint8_t GPIO6 = 6;
-    const static uint8_t GPIO7 = 7;
-    const static uint8_t GPIO8 = 8;
-    const static uint8_t GPIO9 = 9;
+        const static uint8_t GPIO1 = 1;
+        const static uint8_t GPIO2 = 2;
+        const static uint8_t GPIO3 = 3;
+        const static uint8_t GPIO4 = 4;
+        const static uint8_t GPIO5 = 5;
+        const static uint8_t GPIO6 = 6;
+        const static uint8_t GPIO7 = 7;
+        const static uint8_t GPIO8 = 8;
+        const static uint8_t GPIO9 = 9;
 
-  private:
-    // Store the cursor's position
-    uint8_t X;
-    uint8_t Y;
+    private:
+        // Store the cursor's position
+        uint8_t X;
+        uint8_t Y;
 };
 #endif
