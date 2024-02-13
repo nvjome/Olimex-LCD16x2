@@ -35,7 +35,7 @@
 #define GET_FRM     0x21
 #define LCD_CLR     0x60
 #define LCD_WR      0x61
-#define SET_BL		0x62
+#define SET_BL      0x62
 #define UART_EN     0x10
 
 #define BOARD_ID    0x65
@@ -60,15 +60,16 @@ class LCD16x2: public Print{
     void pinMode(uint8_t pin, uint8_t direction);
     void digitalWrite(uint8_t pin, uint8_t level);
     uint8_t digitalRead(uint8_t pin);
-    uint8_t readButtons();    
+    uint8_t readButtons();
 
-    void lcdSetBacklight(uint8_t value);
-    void lcdClear();
-    void lcdGoToXY(uint8_t x, uint8_t y);
-    void lcdSetCursor(uint8_t x, uint8_t y) {lcdGoToXY(x, y);}
-    void lcdWrite(char *string);
-    void lcdWrite(int intVal);
-    void lcdWrite(float floatVal, uint8_t precision);
+    void backlight(uint8_t value) {lcdSetBacklight(value)};
+    void clear() {lcdClear()};
+    void home() {lcdGoToXY(0,0)};
+    void setCursor(uint8_t x, uint8_t y) {lcdGoToXY(x, y)};
+    # void lcdSetCursor(uint8_t x, uint8_t y) {lcdGoToXY(x, y);}
+    # void lcdWrite(char *string);
+    # void lcdWrite(int intVal);
+    # void lcdWrite(float floatVal, uint8_t precision);
     virtual size_t write(uint8_t);
 
     const static uint8_t GPIO1 = 1;
@@ -84,5 +85,9 @@ class LCD16x2: public Print{
   private:
     uint8_t X;
     uint8_t Y;
+
+    inline void lcdSetBacklight(uint8_t value);
+    inline void lcdClear();
+    inline void lcdGoToXY(uint8_t x, uint8_t y);
 };
 #endif
