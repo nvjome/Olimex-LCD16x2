@@ -34,3 +34,23 @@ void loop() {
     //more code here
 }
 ```
+
+Use the `GPIO1` to `GPIO9` constants to access the shield's GPIO.
+
+```c++
+#include "OLIMEX_LCD16x2.h"
+
+LCD16x2 lcd;
+
+void setup() {
+    lcd.begin();
+    lcd.pinMode(GPIO1, OUTPUT);
+}
+
+void loop() {
+    digitalWrite(GPIO1, HIGH);
+    delay(1000);
+    digitalWrite(GPIO1, LOW);
+    delay(1000);
+}
+```
