@@ -20,8 +20,8 @@
  * MA 02110-1301, USA.
  */
 
-#ifndef OLIMEX_LCD16x2_H
-#define OLIMEX_LCD16x2_H
+#ifndef OLIMEX_LCD16X2_H
+#define OLIMEX_LCD16X2_H
 
 #include "Arduino.h"
 #include "Wire.h"

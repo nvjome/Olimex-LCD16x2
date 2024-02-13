@@ -21,7 +21,7 @@
  */
 
 
-#include "OLIMEX_LCD16x2.h"
+#include "Olimex-LCD16x2.h"
 #include "Wire.h"
 
 LCD16x2::LCD16x2() {
