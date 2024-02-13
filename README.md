@@ -2,12 +2,35 @@
 
 Arduino library for the [OLIMEX 16x2 LCD shield](https://www.olimex.com/Products/Duino/Shields/SHIELD-LCD16x2/), which includes an LCD, buttons, and additional GPIO pins.
 
-Bassed off of the original library developed by OLIMEX LTD with the followign improvements:
+Bassed off of the original library developed by OLIMEX LTD with the following improvements:
 
 - Conforms to Arduino library specifications.
 - Improves function naming, now similar to the official [LiquidCrystal](https://github.com/arduino-libraries/LiquidCrystal) library.
-- Adds usage of `print` and `println` to match Arduino convention.
+- Adds usage of `print` to match Arduino convention.
 
 ## ToDo
 
 - Add buttons to `digitalRead` and `digitalWrite` functions.
+
+# Usage
+
+Writing to the display is similar to the LiquidCrystal display.
+
+```c++
+#include "OLIMEX_LCD16x2.h"
+
+LCD16x2 lcd;
+
+void setup() {
+    lcd.begin();
+    lcd.clear();
+    lcd.home();
+    lcd.print("Hello,");
+    lcd.setCursor(0, 1);
+    lcd.print("world!");
+}
+
+void loop() {
+    //more code here
+}
+```
