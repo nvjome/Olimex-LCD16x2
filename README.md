@@ -2,7 +2,7 @@
 
 Arduino library for the [OLIMEX 16x2 LCD shield](https://www.olimex.com/Products/Duino/Shields/SHIELD-LCD16x2/), which includes an LCD, buttons, and additional GPIO pins.
 
-Bassed off of the original library developed by OLIMEX LTD with the following improvements:
+Bassed on the original library developed by OLIMEX LTD with the following improvements:
 
 - Conforms to Arduino library specifications.
 - Improves function naming, now similar to the official [LiquidCrystal](https://github.com/arduino-libraries/LiquidCrystal) library.
