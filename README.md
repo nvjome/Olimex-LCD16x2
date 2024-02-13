@@ -1,33 +1,13 @@
 # OLIMEX_LCD16x2
 
-A library for the OLIMEX 16x2 LCD shield, for the Arduino Uno and compatible boards.
+Arduino library for the [OLIMEX 16x2 LCD shield](https://www.olimex.com/Products/Duino/Shields/SHIELD-LCD16x2/), which includes an LCD, buttons, and additional GPIO pins.
 
-Modified from the original library developed by OLIMEX LTD, including additional functionality, fixed typos, and other fixes. There is no OLIMEX repo to fork from (that I could easily find), so it is here.
+Bassed off of the original library developed by OLIMEX LTD with the followign improvements:
 
-## Issues
+- Conforms to Arduino library specifications.
+- Improves function naming, now similar to the official [LiquidCrystal](https://github.com/arduino-libraries/LiquidCrystal) library.
+- Adds usage of `print` and `println` to match Arduino convention.
 
-- [ ] lcdWrite() generates this warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
-	- Function could be rewritten to accept string parameter. Better yet, overhaul the library to allow the generic write function, similar to the [LiquidCrystal](https://github.com/arduino-libraries/LiquidCrystal) library.
-- [ ] Does not conform to the latest [Arduino library specification](https://arduino.github.io/arduino-cli/0.20/library-specification/), currently r2.
+## ToDo
 
-Original README below:
-
-A SET OF EXAMPLES BETWEEN OLIMEXINO-328 AND SHIELD-LCD16X12.
-
-In order to get the examples working you have to :
-
-1. Close Arduino IDE if it is running
-2. Copy the whole folder "LCD16x2" to the libraries folder of your Arduino IDE (ex. "..\arduino-x.x.x\libraries")
-3. Start Arduino IDE. 
-4. Select the board (Arduino Duemilanove w/ATmega328) and serial port (check this one in your Windows Device Manager --> Ports (COM & LPT) section ).
-
-After that go to: "File --> Examples --> LCD16x2 --> ...", select any of the presented demo programs and compile them:
-
-	Buttons_And_LCD
-	Check_ID
-	GPIO
-	Int_and_float
-	Set_Backlight
-	UART_GPIO
-	UART_LCD
-	
+- Add buttons to `digitalRead` and `digitalWrite` functions.
