@@ -20,7 +20,6 @@
  * MA 02110-1301, USA.
  */
 
-
 #ifndef OLIMEX_LCD16x2_H
 #define OLIMEX_LCD16x2_H
 
@@ -41,7 +40,6 @@
 #define BOARD_ID    0x65
 #define ADDRESS     0x30
 
-
 /**
  * @author      Stefan Mavrodiev @ OLIMEX LTD <support@olimex.com>
  * @version     1.0
@@ -52,24 +50,23 @@ class LCD16x2: public Print{
     LCD16x2();
     ~LCD16x2();
 
+    // High level user functions
     void begin();
-    uint8_t getID();
-    uint8_t getFirmwareVersion();
-    void uartEnable(bool state);
-
     void pinMode(uint8_t pin, uint8_t direction);
     void digitalWrite(uint8_t pin, uint8_t level);
     uint8_t digitalRead(uint8_t pin);
+    void backlight(uint8_t value);
+    void clear();
+    void home() {setCursor(0,0);};
+    void setCursor(uint8_t x, uint8_t y);
+
+    // Mid level user functions
+    uint8_t getID();
+    uint8_t getFirmwareVersion();
+    void uartEnable(bool state);
     uint8_t readButtons();
 
-    void backlight(uint8_t value) {lcdSetBacklight(value)};
-    void clear() {lcdClear()};
-    void home() {lcdGoToXY(0,0)};
-    void setCursor(uint8_t x, uint8_t y) {lcdGoToXY(x, y)};
-    # void lcdSetCursor(uint8_t x, uint8_t y) {lcdGoToXY(x, y);}
-    # void lcdWrite(char *string);
-    # void lcdWrite(int intVal);
-    # void lcdWrite(float floatVal, uint8_t precision);
+    // Print class write function
     virtual size_t write(uint8_t);
 
     const static uint8_t GPIO1 = 1;
@@ -83,11 +80,8 @@ class LCD16x2: public Print{
     const static uint8_t GPIO9 = 9;
 
   private:
+    // Store the cursor's position
     uint8_t X;
     uint8_t Y;
-
-    inline void lcdSetBacklight(uint8_t value);
-    inline void lcdClear();
-    inline void lcdGoToXY(uint8_t x, uint8_t y);
 };
 #endif
