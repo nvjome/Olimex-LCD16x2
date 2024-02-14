@@ -54,3 +54,6 @@ void loop() {
     delay(1000);
 }
 ```
+# License
+
+Released under GPL-2.0 because that was what the original library was.
