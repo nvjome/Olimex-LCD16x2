@@ -1,33 +1,59 @@
-# OLIMEX_LCD16x2
+# Olimex-LCD16x2
 
-A library for the OLIMEX 16x2 LCD shield, for the Arduino Uno and compatible boards.
+Arduino library for the [Olimex 16x2 LCD shield](https://www.olimex.com/Products/Duino/Shields/SHIELD-LCD16x2/), which includes an LCD, buttons, and additional GPIO pins.
 
-Modified from the original library developed by OLIMEX LTD, including additional functionality, fixed typos, and other fixes. There is no OLIMEX repo to fork from (that I could easily find), so it is here.
+Based on the original library developed by OLIMEX LTD with the following improvements:
 
-## Issues
+- Conforms to Arduino library specifications.
+- Improves function naming, now similar to the official [LiquidCrystal](https://github.com/arduino-libraries/LiquidCrystal) library.
+- Adds usage of `print` to match Arduino convention.
 
-- [ ] lcdWrite() generates this warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
-	- Function could be rewritten to accept string parameter. Better yet, overhaul the library to allow the generic write function, similar to the [LiquidCrystal](https://github.com/arduino-libraries/LiquidCrystal) library.
-- [ ] Does not conform to the latest [Arduino library specification](https://arduino.github.io/arduino-cli/0.20/library-specification/), currently r2.
+## ToDo
 
-Original README below:
+- Add buttons to `digitalRead` and `digitalWrite` functions.
 
-A SET OF EXAMPLES BETWEEN OLIMEXINO-328 AND SHIELD-LCD16X12.
+# Usage
 
-In order to get the examples working you have to :
+Writing to the display is similar to the LiquidCrystal display.
 
-1. Close Arduino IDE if it is running
-2. Copy the whole folder "LCD16x2" to the libraries folder of your Arduino IDE (ex. "..\arduino-x.x.x\libraries")
-3. Start Arduino IDE. 
-4. Select the board (Arduino Duemilanove w/ATmega328) and serial port (check this one in your Windows Device Manager --> Ports (COM & LPT) section ).
+```c++
+#include "Olimex-LCD16x2.h"
 
-After that go to: "File --> Examples --> LCD16x2 --> ...", select any of the presented demo programs and compile them:
+LCD16x2 lcd;
 
-	Buttons_And_LCD
-	Check_ID
-	GPIO
-	Int_and_float
-	Set_Backlight
-	UART_GPIO
-	UART_LCD
-	
+void setup() {
+    lcd.begin();
+    lcd.clear();
+    lcd.home();
+    lcd.print("Hello,");
+    lcd.setCursor(0, 1);
+    lcd.print("world!");
+}
+
+void loop() {
+    //more code here
+}
+```
+
+Use the `GPIO1` to `GPIO9` constants to access the shield's GPIO.
+
+```c++
+#include "Olimex-LCD16x2.h"
+
+LCD16x2 lcd;
+
+void setup() {
+    lcd.begin();
+    lcd.pinMode(GPIO1, OUTPUT);
+}
+
+void loop() {
+    digitalWrite(GPIO1, HIGH);
+    delay(1000);
+    digitalWrite(GPIO1, LOW);
+    delay(1000);
+}
+```
+# License
+
+Released under GPL-2.0 because that was what the original library was.

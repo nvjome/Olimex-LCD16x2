@@ -21,26 +21,17 @@
  */
 
 
-#include "OLIMEX_LCD16x2.h"
+#include "Olimex-LCD16x2.h"
 #include "Wire.h"
 
-/**
- * Default constructor.
- */
 LCD16x2::LCD16x2() {
     X = 0;
     Y = 1;
 }
 
-/**
- * Default destructor.
- */
 LCD16x2::~LCD16x2() {
 }
 
-/**
- * Initialise I2C bus.
- */
 void LCD16x2::begin() {
     Wire.begin();
 }
@@ -64,7 +55,7 @@ uint8_t LCD16x2::getID() {
     return id;
 }
 
-void LCD16x2::lcdSetBacklight(uint8_t value) {
+void LCD16x2::backlight(uint8_t value) {
 	Wire.beginTransmission(ADDRESS);
 	Wire.write(SET_BL);
 	Wire.write(value);
@@ -169,7 +160,7 @@ uint8_t LCD16x2::readButtons() {
 /**
  * Clear the LCD screen.
  */
-void LCD16x2::lcdClear() {
+void LCD16x2::clear() {
     Wire.beginTransmission(ADDRESS);
     Wire.write(LCD_CLR);
     Wire.endTransmission();
@@ -181,7 +172,7 @@ void LCD16x2::lcdClear() {
  * @param x     X coordinate
  * @param y     Y coordinate
  */
-void LCD16x2::lcdGoToXY(uint8_t x, uint8_t y) {
+void LCD16x2::setCursor(uint8_t x, uint8_t y) {
     if (x > 16 || x < 1) {
         return;
     } else {
@@ -195,46 +186,17 @@ void LCD16x2::lcdGoToXY(uint8_t x, uint8_t y) {
     Y = y;
 }
 
-/**
- * Write string to the LCD screen.
- * @param string        String to be written.
- */
-void LCD16x2::lcdWrite(char* string) {
-    uint8_t len;
-    uint8_t x, y;
-    x = X;
-    y = Y;
+/*
+ * Provided for Print class usage
+*/
+size_t LCD16x2::write(uint8_t character) {
+    Wire.beginTransmission(ADDRESS);
+    Wire.write(LCD_WR);
+    Wire.write(X);
+    Wire.write(Y);
+    Wire.write(character);
+    Wire.endTransmission();
     
-    len = strlen(string);
-    for (int i = 0; i < len; i++) {
-        Wire.beginTransmission(ADDRESS);
-        Wire.write(LCD_WR);
-        Wire.write(y);
-        Wire.write(x);
-        Wire.write(string[i]);
-        Wire.endTransmission();
-        
-        delay(20);
-        x++;  
-        if (x > 15) {
-            x = 0;
-            y++;
-            if (y > 2) {
-                return;
-            }
-        }   
-    }
-}
-
-void LCD16x2::lcdWrite(int intVal) {
-    String Str = String (intVal);
-    char charBuf[6];
-    Str.toCharArray(charBuf, 6);
-    lcdWrite(charBuf);
-}
-
-void LCD16x2::lcdWrite(float floatVal, uint8_t precision) {
-    char charBuf[10];
-	dtostrf(floatVal, 3, precision, charBuf);
-    lcdWrite(charBuf);
+    delay(20);
+    return 1;
 }
